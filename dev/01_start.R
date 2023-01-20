@@ -21,11 +21,11 @@
 golem::fill_desc(
   pkg_name = "interchangeGUI", # The Name of the package containing the App
   pkg_title = "Easily Convert Common Filetypes for Biological Data", # The Title of the package containing the App
-  pkg_description = "Easily convert common filetypes for biological data", # The Description of the package containing the App
+  pkg_description = "Easily convert common filetypes for biological data.", # The Description of the package containing the App
   author_first_name = "Sam", # Your First Name
   author_last_name = "El-Kamand", # Your Last Name
   author_email = "selkamand@ccia.org.au", # Your Email
-  repo_url = "CCICB/interchangeGUI" # The URL of the GitHub Repo (optional)
+  repo_url = NULL # The URL of the GitHub Repo (optional)
 )
 
 ## Set {golem} options ----

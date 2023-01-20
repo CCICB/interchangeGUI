@@ -17,21 +17,24 @@ knitr::opts_chunk$set(
 
 <!-- badges: start -->
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
+[![R-CMD-check](https://github.com/CCICB/interchangeGUI/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/CCICB/interchangeGUI/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
-The goal of interchangeGUI is to ...
+interchangeGUI makes it easy to convert common biological filetypes, increasing interoperability
+
 
 ## Installation
 
 You can install the development version of interchangeGUI like so:
 
 ``` r
-# FILL THIS IN! HOW CAN PEOPLE INSTALL YOUR DEV PACKAGE?
+# install.packages('remotes')
+remotes::install_github('CCICB/interchangeGUI')
 ```
 
 ## Example
 
-This is a basic example which shows you how to solve a common problem:
+
 
 ```{r example}
 library(interchangeGUI)

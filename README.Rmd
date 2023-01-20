@@ -32,13 +32,12 @@ You can install the development version of interchangeGUI like so:
 remotes::install_github('CCICB/interchangeGUI')
 ```
 
-## Example
+## Quick Start
 
+interchangeGUI contains only one function `run_app()` which launches the shiny app
 
-
-```{r example}
-library(interchangeGUI)
-## basic example code
+```{r eval=FALSE}
+interchangeGUI::run_app()
 ```
 
 

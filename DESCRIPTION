@@ -5,15 +5,20 @@ Authors@R: person('Sam', 'El-Kamand', email = 'selkamand@ccia.org.au', role = c(
 Description: Easily convert common filetypes for biological data.
 License: MIT + file LICENSE
 Imports: 
+    cli,
     config (>= 0.3.1),
+    data.table,
     golem (>= 0.3.5),
     interchange (>= 0.0.0.9000),
     magrittr,
-    pkgload,
     shiny (>= 1.7.1),
+    shinybusy,
     shinydashboard,
+    shinyjs,
+    shinyvalidate,
     shinyWidgets,
-    utilitybeltassertions (>= 0.0.0.9000)
+    utilitybeltassertions (>= 0.0.0.9000),
+    vcf2mafR (>= 0.0.0.9000)
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.2.3
@@ -26,4 +31,5 @@ Config/testthat/edition: 3
 Language: en-US
 Remotes: 
     selkamand/utilitybeltassertions,
-    CCICB/interchange
+    CCICB/interchange,
+    CCICB/vcf2mafR

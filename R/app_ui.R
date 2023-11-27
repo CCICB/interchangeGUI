@@ -29,8 +29,8 @@ app_ui <- function(request) {
       body = shinydashboard::dashboardBody(
         shinydashboard::tabItems(
           shinydashboard::tabItem(tabName = "search", mod_conversion_search_ui("mod_conversion_search")),
-          shinydashboard::tabItem(tabName = "GISTIC_to_CRUX", mod_convert_gistic_to_crux_ui("mod_convert_gistic_to_crux")),
-          shinydashboard::tabItem(tabName = "VCF_to_MAF", mod_convert_vcf_to_maf_ui("mod_convert_vcf_to_maf"))
+          shinydashboard::tabItem(tabName = "VCF_to_MAF", mod_convert_vcf_to_maf_ui("mod_convert_vcf_to_maf")),
+          shinydashboard::tabItem(tabName = "GISTIC_to_CRUX", mod_convert_gistic_to_crux_ui("mod_convert_gistic_to_crux"))
         )
       )
     )

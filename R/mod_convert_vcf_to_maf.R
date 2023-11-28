@@ -14,12 +14,14 @@ mod_convert_vcf_to_maf_ui <- function(id){
     shinyWidgets::panel(
       heading = "Step 1: Select VCF Files",
       fluidRow(
-        fileInput(inputId = ns('in_file_vcf'), label = "Import VCF", multiple = TRUE, width = '80%', accept = c(".vcf", ".gz")) |> column(width = 3),
+        fileInput(inputId = ns('in_file_vcf'), label = "Import VCFs", multiple = TRUE, width = '80%', accept = c(".vcf", ".gz")) |> column(width = 3),
         shinydashboard::box(
           title = 'Converting VCF files to a MAF',
           'To convert VCF files to MAFs they must first be annotated with VEP, using specific settings.
           If your analysis pipeline does not perform this annotation automatically,
           see [add link] for instructions on how to manually annotate VCFs using the online VEP tool',
+          tags$br(),tags$br(),
+          shiny::downloadLink(outputId = ns("out_download_vcf"), label = "Download Demo VCF files"),
           width = "100%"
         ) |> column(width = 9),
       )
@@ -259,6 +261,12 @@ mod_convert_vcf_to_maf_server <- function(id){
       content = function(file){
       data.table::fwrite(x = maf(), file = file, sep="\t")
       })
+
+    output$out_download_vcf <- downloadHandler(filename = "demo.vep_annotated_vcfs.zip", content = function(file) {
+      path = system.file("example_data/vcf2maf_demo.zip", package = "interchangeGUI")
+      file.copy(path, file)
+    })
+
   })
 }
 ## To be copied in the UI

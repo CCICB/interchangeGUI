@@ -23,7 +23,7 @@ mod_convert_gistic_to_crux_ui <- function(id){
         choices = c("all", "deep", "shallow"),
         selected = "all"
       ) %>% col_2(),
-      textInput(ns("in_text_cohort_name"), label = "Name of Cohort", width = "100%", placeholder = "My Cohort") %>% col_4(),
+      textInput(ns("in_text_cohort_name"), label = "Name of Cohort", width = "100%", value = 'My Cohort',placeholder = "My Cohort") %>% col_4(),
       shinyWidgets::prettyCheckbox(ns("in_check_is_tcga"), label = "Is TCGA?", value = FALSE, animation = "tada", inline = TRUE) %>% col_2()
       ),
     icon_down_arrow(break_after = TRUE),
@@ -39,7 +39,9 @@ mod_convert_gistic_to_crux_server <- function(id){
     ns <- session$ns
     input
     output$out_download_bttn <- downloadHandler(
-      filename =paste0(tools::file_path_sans_ext(input$in_file_gistic_zip$name, compression = TRUE), ".gistic"),
+      filename = function(){
+        paste0(tools::file_path_sans_ext(input$in_text_cohort_name, compression = TRUE), ".gistic.Rds")
+      },
       content = function(file){
         interchange::convert_gistic_tar_to_crux(
           input$in_file_gistic_zip$datapath,
